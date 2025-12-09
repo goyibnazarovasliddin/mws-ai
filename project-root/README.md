@@ -1,4 +1,4 @@
-# MWS Backend — Umumiy Overview (Qisqa, ammo keng qamrovli)
+# MWS Backend — Project Overview
 
 Ushbu backend xizmati — dasturiy ta’minot xavfsizligi jarayonida ishlatiladigan secret-skanner vositalari (Gitleaks, TruffleHog, GitGuardian va boshqalar) natijalarini avtomatlashtirilgan tarzda tahlil qilish va ularning ichida aynan haqiqiy xavf tug‘diruvchi sirlarni ajratib olish uchun mo‘ljallangan.
 
