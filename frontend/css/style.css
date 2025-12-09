@@ -774,64 +774,61 @@ header {
     font-size: 1.1rem;
 }
 
-/* Responsive Tweaks for New Pages */
-@media (max-width: 900px) {
+/* Mobile Optimization */
+@media (max-width: 768px) {
+
+    /* Hero Mobile */
     .hero-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
-        overflow-y: auto;
+        justify-content: center;
+        padding: 40px 20px;
     }
 
-    .hero-block {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        width: 100%;
-        margin-bottom: 20px;
-        height: auto;
-    }
-
-    .k2-block {
-        height: auto;
-        margin-bottom: 10px;
-        background: transparent;
-        padding: 0;
-    }
-
-    .hero-brand {
+    .hero-title {
         font-size: 3rem;
+        line-height: 1.1;
     }
 
-    .main-block {
-        order: 2;
-        background: transparent;
-        border: none;
+    .hero-subtitle {
+        font-size: 1.2rem;
+        padding: 0 10px;
     }
 
-    .hero-image {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        height: 300px;
-        margin-bottom: 10px;
-    }
-
-    .whale-img {
+    .btn-hero {
+        padding: 14px 32px;
+        font-size: 1rem;
         width: 100%;
-        transform: none;
+        max-width: 280px;
+    }
+
+    /* About Mobile */
+    .about-container {
+        padding: 24px 16px;
+        display: block;
+        /* Allow better scrolling on mobile */
     }
 
     .about-title {
         font-size: 2.5rem;
+        text-align: center;
     }
 
+    .about-desc {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+
+    /* Guide Mobile */
     .results-section ul {
         grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 }
