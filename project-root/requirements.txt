@@ -1,0 +1,7 @@
+"""
+Dependency manifest
+
+Vazifasi:
+- Loyihangizdagi kutubxonalarni aniqlaydi.
+- `pip install -r requirements.txt` yoki `poetry install` orqali bog'lanadi.
+"""

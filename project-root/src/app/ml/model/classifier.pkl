@@ -1,0 +1,10 @@
+"""
+O'rgatilgan ML model fayli (joblib yoki pickle formatida).
+
+Vazifasi:
+- `ml.predict` modulida yuklanib, features (X) asosida FP ehtimolini hisoblaydi.
+
+E'tibor:
+- Bu fayl `ml/train.py` ishga tushgach avtomatik yaratiladi (train natijasi).
+- Git-ga push qilinmaydi (yirik binar fayllar uchun Git LFS kerak bo‘ladi).
+"""
