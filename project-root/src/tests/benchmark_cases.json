@@ -1,0 +1,3432 @@
+[
+  {
+    "id": 1,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-1",
+                  "name": "Test Rule 1"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-1",
+              "message": {
+                "text": "AWS_KEY = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/config.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'AWS_KEY = 'AKIAIOSFODNN7EXAMPLE''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-2",
+                  "name": "Test Rule 2"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-2",
+              "message": {
+                "text": "api_secret = 'todo-fix-this-later'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/api.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'api_secret = 'todo-fix-this-later''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-3",
+                  "name": "Test Rule 3"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-3",
+              "message": {
+                "text": "const mockData = '12345'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/utils.js"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'const mockData = '12345''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-4",
+                  "name": "Test Rule 4"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-4",
+              "message": {
+                "text": "test_token = 'abcdefg'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/tests/test_auth.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'test_token = 'abcdefg''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-5",
+                  "name": "Test Rule 5"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-5",
+              "message": {
+                "text": "dummy_password = 'password123'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/user_manager.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'dummy_password = 'password123''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-6",
+                  "name": "Test Rule 6"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-6",
+              "message": {
+                "text": "foo = 'bar'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/main.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'foo = 'bar''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-7",
+                  "name": "Test Rule 7"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-7",
+              "message": {
+                "text": "sample_key = '12345'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "README.md"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'sample_key = '12345''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-8",
+                  "name": "Test Rule 8"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-8",
+              "message": {
+                "text": "password = 'mysqldb_password'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config.yaml"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'password = 'mysqldb_password''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-9",
+                  "name": "Test Rule 9"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-9",
+              "message": {
+                "text": "token = 'fixme'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/service.go"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'token = 'fixme''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-10",
+                  "name": "Test Rule 10"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-10",
+              "message": {
+                "text": "secret = 'test-secret-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "deploy/test_deploy.sh"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'secret = 'test-secret-1''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-11",
+                  "name": "Test Rule 11"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-11",
+              "message": {
+                "text": "key = 'example-key-123'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/aws.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'key = 'example-key-123''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-12",
+                  "name": "Test Rule 12"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-12",
+              "message": {
+                "text": "auth = 'mock-auth-token'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/client.ts"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'auth = 'mock-auth-token''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 13,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-13",
+                  "name": "Test Rule 13"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-13",
+              "message": {
+                "text": "pass = 'dummy-pass'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth_test.rb"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'pass = 'dummy-pass''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-14",
+                  "name": "Test Rule 14"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-14",
+              "message": {
+                "text": "api_key = 'foo-bar-baz'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/settings.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'api_key = 'foo-bar-baz''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "type": "Rule",
+    "description": "Test case for Rule detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-15",
+                  "name": "Test Rule 15"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-15",
+              "message": {
+                "text": "db_pass = 'sample-123'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/database.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'db_pass = 'sample-123''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-16",
+                  "name": "Test Rule 16"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-16",
+              "message": {
+                "text": "admin"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'admin'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-17",
+                  "name": "Test Rule 17"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-17",
+              "message": {
+                "text": "123456"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/config.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = '123456'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-18",
+                  "name": "Test Rule 18"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-18",
+              "message": {
+                "text": "password"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/login.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'password'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-19",
+                  "name": "Test Rule 19"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-19",
+              "message": {
+                "text": "secret"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/secrets.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-20",
+                  "name": "Test Rule 20"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-20",
+              "message": {
+                "text": "root"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/db.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'root'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-21",
+                  "name": "Test Rule 21"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-21",
+              "message": {
+                "text": "user"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/models.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'user'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-22",
+                  "name": "Test Rule 22"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-22",
+              "message": {
+                "text": "access"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/acl.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'access'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-23",
+                  "name": "Test Rule 23"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-23",
+              "message": {
+                "text": "token"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/oauth.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'token'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-24",
+                  "name": "Test Rule 24"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-24",
+              "message": {
+                "text": "qwerty"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/keyboard.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'qwerty'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-25",
+                  "name": "Test Rule 25"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-25",
+              "message": {
+                "text": "111111"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/pin.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = '111111'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-26",
+                  "name": "Test Rule 26"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-26",
+              "message": {
+                "text": "abcdef"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/alphabet.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'abcdef'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-27",
+                  "name": "Test Rule 27"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-27",
+              "message": {
+                "text": "welcome"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/home.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'welcome'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-28",
+                  "name": "Test Rule 28"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-28",
+              "message": {
+                "text": "login"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/session.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'login'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-29",
+                  "name": "Test Rule 29"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-29",
+              "message": {
+                "text": "changeme"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/default.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'changeme'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "type": "ML",
+    "description": "Test case for ML detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-30",
+                  "name": "Test Rule 30"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-30",
+              "message": {
+                "text": "master"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/branch.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'master'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-31",
+                  "name": "Test Rule 31"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-31",
+              "message": {
+                "text": "INSERT_STRIPE_KEY_HERE"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/payments.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'INSERT_STRIPE_KEY_HERE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-32",
+                  "name": "Test Rule 32"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-32",
+              "message": {
+                "text": "replace_with_your_actual_token_123_abc"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/bot.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'replace_with_your_actual_token_123_abc'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-33",
+                  "name": "Test Rule 33"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-33",
+              "message": {
+                "text": "<ENTER_PRODUCTION_SECRET>"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/prod.xml"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = '<ENTER_PRODUCTION_SECRET>'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-34",
+                  "name": "Test Rule 34"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-34",
+              "message": {
+                "text": "YOUR_API_KEY_GOES_HERE"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "examples/usage.js"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'YOUR_API_KEY_GOES_HERE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-35",
+                  "name": "Test Rule 35"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-35",
+              "message": {
+                "text": "00000000-0000-0000-0000-000000000000"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/uuid_gen.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = '00000000-0000-0000-0000-000000000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-36",
+                  "name": "Test Rule 36"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-36",
+              "message": {
+                "text": "this_is_a_placeholder_key_do_not_use"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/dev_config.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'this_is_a_placeholder_key_do_not_use'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-37",
+                  "name": "Test Rule 37"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-37",
+              "message": {
+                "text": "fake_key_generated_for_docs_only_XYZ"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "docs/setup.md"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'fake_key_generated_for_docs_only_XYZ'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-38",
+                  "name": "Test Rule 38"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-38",
+              "message": {
+                "text": "AIzaSyD-FakeKeyForDocumentationPurposeOnly"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/maps.js"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'AIzaSyD-FakeKeyForDocumentationPurposeOnly'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-39",
+                  "name": "Test Rule 39"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-39",
+              "message": {
+                "text": "sk_test_51MzINVALIDKEYfortestingPurposesOnly"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/stripe.ts"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'sk_test_51MzINVALIDKEYfortestingPurposesOnly'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-40",
+                  "name": "Test Rule 40"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-40",
+              "message": {
+                "text": "ghp_ThisIsARevokedKeyForDemonstration0123"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/git_ops.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'ghp_ThisIsARevokedKeyForDemonstration0123'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 41,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-41",
+                  "name": "Test Rule 41"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-41",
+              "message": {
+                "text": "'password': 'hidden_in_env_vars'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "docker-compose.yml"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = ''password': 'hidden_in_env_vars''"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 42,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-42",
+                  "name": "Test Rule 42"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-42",
+              "message": {
+                "text": "postgres://user:placeholder@localhost:5432/db"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/db_string.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'postgres://user:placeholder@localhost:5432/db'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 43,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-43",
+                  "name": "Test Rule 43"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-43",
+              "message": {
+                "text": "Bearer YOUR_ACCESS_TOKEN"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth_header.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'Bearer YOUR_ACCESS_TOKEN'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 44,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-44",
+                  "name": "Test Rule 44"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-44",
+              "message": {
+                "text": "private_key = load_from_env() # Not hardcoded"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/pki.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'private_key = load_from_env() # Not hardcoded'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 45,
+    "type": "LLM",
+    "description": "Test case for LLM detection",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": [
+                {
+                  "id": "test-rule-45",
+                  "name": "Test Rule 45"
+                }
+              ]
+            }
+          },
+          "results": [
+            {
+              "ruleId": "test-rule-45",
+              "message": {
+                "text": "invalid_credential_marker"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/validation.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "some_var = 'invalid_credential_marker'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 46,
+    "type": "Complex Mixed",
+    "description": "Auth Module Chaos (Mixed FP/TP - 12 findings)",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": []
+            }
+          },
+          "results": [
+            {
+              "ruleId": "complex-rule-46-0",
+              "message": {
+                "text": "ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 10,
+                      "snippet": {
+                        "text": "var_0 = ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-1",
+              "message": {
+                "text": "sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 11,
+                      "snippet": {
+                        "text": "var_1 = sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-2",
+              "message": {
+                "text": "pwd = 'change_me'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 12,
+                      "snippet": {
+                        "text": "var_2 = pwd = 'change_me'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-3",
+              "message": {
+                "text": "db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 13,
+                      "snippet": {
+                        "text": "var_3 = db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-4",
+              "message": {
+                "text": "AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 14,
+                      "snippet": {
+                        "text": "var_4 = AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-5",
+              "message": {
+                "text": "secret = 'mock_secret'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "var_5 = secret = 'mock_secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-6",
+              "message": {
+                "text": "password = 'Xy9#mP2$vL5@nQ8!'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 16,
+                      "snippet": {
+                        "text": "var_6 = password = 'Xy9#mP2$vL5@nQ8!'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-7",
+              "message": {
+                "text": "api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 17,
+                      "snippet": {
+                        "text": "var_7 = api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-8",
+              "message": {
+                "text": "token = 'test-token-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 18,
+                      "snippet": {
+                        "text": "var_8 = token = 'test-token-1'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-9",
+              "message": {
+                "text": "key = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 19,
+                      "snippet": {
+                        "text": "var_9 = key = 'AKIAIOSFODNN7EXAMPLE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-10",
+              "message": {
+                "text": "pass = 'example'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 20,
+                      "snippet": {
+                        "text": "var_10 = pass = 'example'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-46-11",
+              "message": {
+                "text": "api_key = '00000000'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "src/auth/login.py"
+                    },
+                    "region": {
+                      "startLine": 21,
+                      "snippet": {
+                        "text": "var_11 = api_key = '00000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 47,
+    "type": "Complex Mixed",
+    "description": "Config Leaks (Mixed FP/TP - 12 findings)",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": []
+            }
+          },
+          "results": [
+            {
+              "ruleId": "complex-rule-47-0",
+              "message": {
+                "text": "ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 10,
+                      "snippet": {
+                        "text": "var_0 = ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-1",
+              "message": {
+                "text": "db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 11,
+                      "snippet": {
+                        "text": "var_1 = db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-2",
+              "message": {
+                "text": "password = 'Xy9#mP2$vL5@nQ8!'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 12,
+                      "snippet": {
+                        "text": "var_2 = password = 'Xy9#mP2$vL5@nQ8!'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-3",
+              "message": {
+                "text": "api_key = '00000000'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 13,
+                      "snippet": {
+                        "text": "var_3 = api_key = '00000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-4",
+              "message": {
+                "text": "secret = 'mock_secret'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 14,
+                      "snippet": {
+                        "text": "var_4 = secret = 'mock_secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-5",
+              "message": {
+                "text": "key = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "var_5 = key = 'AKIAIOSFODNN7EXAMPLE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-6",
+              "message": {
+                "text": "sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 16,
+                      "snippet": {
+                        "text": "var_6 = sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-7",
+              "message": {
+                "text": "AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 17,
+                      "snippet": {
+                        "text": "var_7 = AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-8",
+              "message": {
+                "text": "api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 18,
+                      "snippet": {
+                        "text": "var_8 = api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-9",
+              "message": {
+                "text": "token = 'test-token-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 19,
+                      "snippet": {
+                        "text": "var_9 = token = 'test-token-1'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-10",
+              "message": {
+                "text": "pass = 'example'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 20,
+                      "snippet": {
+                        "text": "var_10 = pass = 'example'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-47-11",
+              "message": {
+                "text": "pwd = 'change_me'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "config/production.yaml"
+                    },
+                    "region": {
+                      "startLine": 21,
+                      "snippet": {
+                        "text": "var_11 = pwd = 'change_me'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 48,
+    "type": "Complex Mixed",
+    "description": "Legacy Data Dump (Mixed FP/TP - 12 findings)",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": []
+            }
+          },
+          "results": [
+            {
+              "ruleId": "complex-rule-48-0",
+              "message": {
+                "text": "pass = 'example'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 10,
+                      "snippet": {
+                        "text": "var_0 = pass = 'example'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-1",
+              "message": {
+                "text": "ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 11,
+                      "snippet": {
+                        "text": "var_1 = ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-2",
+              "message": {
+                "text": "secret = 'mock_secret'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 12,
+                      "snippet": {
+                        "text": "var_2 = secret = 'mock_secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-3",
+              "message": {
+                "text": "api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 13,
+                      "snippet": {
+                        "text": "var_3 = api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-4",
+              "message": {
+                "text": "sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 14,
+                      "snippet": {
+                        "text": "var_4 = sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-5",
+              "message": {
+                "text": "password = 'Xy9#mP2$vL5@nQ8!'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "var_5 = password = 'Xy9#mP2$vL5@nQ8!'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-6",
+              "message": {
+                "text": "pwd = 'change_me'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 16,
+                      "snippet": {
+                        "text": "var_6 = pwd = 'change_me'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-7",
+              "message": {
+                "text": "token = 'test-token-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 17,
+                      "snippet": {
+                        "text": "var_7 = token = 'test-token-1'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-8",
+              "message": {
+                "text": "AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 18,
+                      "snippet": {
+                        "text": "var_8 = AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-9",
+              "message": {
+                "text": "key = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 19,
+                      "snippet": {
+                        "text": "var_9 = key = 'AKIAIOSFODNN7EXAMPLE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-10",
+              "message": {
+                "text": "api_key = '00000000'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 20,
+                      "snippet": {
+                        "text": "var_10 = api_key = '00000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-48-11",
+              "message": {
+                "text": "db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "data/backup_2024.sql"
+                    },
+                    "region": {
+                      "startLine": 21,
+                      "snippet": {
+                        "text": "var_11 = db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "type": "Complex Mixed",
+    "description": "Frontend Build Artifacts (Mixed FP/TP - 12 findings)",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": []
+            }
+          },
+          "results": [
+            {
+              "ruleId": "complex-rule-49-0",
+              "message": {
+                "text": "secret = 'mock_secret'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 10,
+                      "snippet": {
+                        "text": "var_0 = secret = 'mock_secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-1",
+              "message": {
+                "text": "pwd = 'change_me'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 11,
+                      "snippet": {
+                        "text": "var_1 = pwd = 'change_me'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-2",
+              "message": {
+                "text": "db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 12,
+                      "snippet": {
+                        "text": "var_2 = db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-3",
+              "message": {
+                "text": "sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 13,
+                      "snippet": {
+                        "text": "var_3 = sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-4",
+              "message": {
+                "text": "api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 14,
+                      "snippet": {
+                        "text": "var_4 = api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-5",
+              "message": {
+                "text": "key = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "var_5 = key = 'AKIAIOSFODNN7EXAMPLE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-6",
+              "message": {
+                "text": "ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 16,
+                      "snippet": {
+                        "text": "var_6 = ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-7",
+              "message": {
+                "text": "password = 'Xy9#mP2$vL5@nQ8!'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 17,
+                      "snippet": {
+                        "text": "var_7 = password = 'Xy9#mP2$vL5@nQ8!'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-8",
+              "message": {
+                "text": "token = 'test-token-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 18,
+                      "snippet": {
+                        "text": "var_8 = token = 'test-token-1'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-9",
+              "message": {
+                "text": "pass = 'example'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 19,
+                      "snippet": {
+                        "text": "var_9 = pass = 'example'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-10",
+              "message": {
+                "text": "api_key = '00000000'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 20,
+                      "snippet": {
+                        "text": "var_10 = api_key = '00000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-49-11",
+              "message": {
+                "text": "AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "build/static/js/main.chunk.js"
+                    },
+                    "region": {
+                      "startLine": 21,
+                      "snippet": {
+                        "text": "var_11 = AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 50,
+    "type": "Complex Mixed",
+    "description": "Test Environment Config (Mixed FP/TP - 12 findings)",
+    "payload": {
+      "version": "2.1.0",
+      "runs": [
+        {
+          "tool": {
+            "driver": {
+              "name": "gitleaks",
+              "rules": []
+            }
+          },
+          "results": [
+            {
+              "ruleId": "complex-rule-50-0",
+              "message": {
+                "text": "secret = 'mock_secret'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 10,
+                      "snippet": {
+                        "text": "var_0 = secret = 'mock_secret'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-1",
+              "message": {
+                "text": "sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 11,
+                      "snippet": {
+                        "text": "var_1 = sk_test_51HzU9fL7x8y9z0a1b2c3d4e5f6g7h8"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-2",
+              "message": {
+                "text": "api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 12,
+                      "snippet": {
+                        "text": "var_2 = api_access = 'zaCELgL0imfnc8mVLWwsAawjYr4Rx-Af50DDqtlx'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-3",
+              "message": {
+                "text": "db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 13,
+                      "snippet": {
+                        "text": "var_3 = db_secret = 'e7b9c1d2-a3f4-4b5c-8d9e-0f1a2b3c4d5e'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-4",
+              "message": {
+                "text": "token = 'test-token-1'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 14,
+                      "snippet": {
+                        "text": "var_4 = token = 'test-token-1'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-5",
+              "message": {
+                "text": "password = 'Xy9#mP2$vL5@nQ8!'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 15,
+                      "snippet": {
+                        "text": "var_5 = password = 'Xy9#mP2$vL5@nQ8!'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-6",
+              "message": {
+                "text": "api_key = '00000000'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 16,
+                      "snippet": {
+                        "text": "var_6 = api_key = '00000000'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-7",
+              "message": {
+                "text": "pwd = 'change_me'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 17,
+                      "snippet": {
+                        "text": "var_7 = pwd = 'change_me'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-8",
+              "message": {
+                "text": "ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 18,
+                      "snippet": {
+                        "text": "var_8 = ghp_7z8y9x0a1b2c3d4e5f6g7h8i9j0k1l2m3n4"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-9",
+              "message": {
+                "text": "pass = 'example'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 19,
+                      "snippet": {
+                        "text": "var_9 = pass = 'example'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-10",
+              "message": {
+                "text": "AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 20,
+                      "snippet": {
+                        "text": "var_10 = AWS_KEY = 'AKIA5B4H6J7K8L9M0N1P'"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "ruleId": "complex-rule-50-11",
+              "message": {
+                "text": "key = 'AKIAIOSFODNN7EXAMPLE'"
+              },
+              "locations": [
+                {
+                  "physicalLocation": {
+                    "artifactLocation": {
+                      "uri": "tests/fixtures/secrets.json"
+                    },
+                    "region": {
+                      "startLine": 21,
+                      "snippet": {
+                        "text": "var_11 = key = 'AKIAIOSFODNN7EXAMPLE'"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

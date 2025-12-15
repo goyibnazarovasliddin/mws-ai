@@ -1,10 +1,12 @@
 """
-Xavfsizlik va util funktsiyalari.
+Security and util functions.
 
-Vazifasi:
-- Parol hash/verify, rate-limit wrappers, IP cheklovlar, va boshqa xavfsizlik utils.
-- Xavfsizlik bilan bog‘liq umumiy kodlarni bu yerga joylaymiz.
+Purpose:
+- Password hash/verify, rate-limit wrappers, IP restrictions, and other security utils.
+- We put general security-related code here.
 
-Bog'lanish:
-- core/auth.py, api endpointlar.
+Links:
+- core/auth.py, api endpoints.
 """
+
+# not used yet

@@ -1,10 +1,12 @@
 """
 Background worker entrypoint.
 
-Vazifasi:
-- Celery worker yoki RQ worker tayyorlaydigan skript.
-- tasks.py ichidagi funksiyalarni process qiladi.
+Task:
+- Script that prepares a Celery worker or RQ worker.
+- Processes functions in tasks.py.
 
-Bog'lanish:
-- docker-compose.yml ichida `worker` servisi sifatida ishlatiladi (agar asinxron arxitektura bo‘lsa).
+Binding:
+- Used as `worker` service in docker-compose.yml (if asynchronous architecture).
 """
+
+# not used yet

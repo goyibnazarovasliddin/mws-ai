@@ -1,7 +1,9 @@
 """
-ML komponentni unit testlari.
+ML component unit tests.
 
-Vazifasi:
-- feature extraction va predict wrapper metodlarini test qiladi.
-- model mavjudligi, fallback va chiqish turlarini tekshiradi.
+Task:
+- tests feature extraction and predict wrapper methods.
+- checks model existence, fallback and output types.
 """
+
+# not used yet

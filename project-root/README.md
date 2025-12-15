@@ -1,37 +1,97 @@
-# MWS Backend — Project Overview
+# SecretSense AI - Advanced Secret Detection Backend System
 
-Ushbu backend xizmati — dasturiy ta’minot xavfsizligi jarayonida ishlatiladigan secret-skanner vositalari (Gitleaks, TruffleHog, GitGuardian va boshqalar) natijalarini avtomatlashtirilgan tarzda tahlil qilish va ularning ichida aynan haqiqiy xavf tug‘diruvchi sirlarni ajratib olish uchun mo‘ljallangan.
+## Project Overview
+SecretSense is an intelligent backend system designed to analyze security scan reports (like Gitleaks SARIF) and filter out False Positives using a multi-layered approach. It combines static heuristics, Machine Learning (Random Forest), and Large Language Models (OpenAI) to provide high-accuracy secret detection.
 
-An’anaviy skannerlar faqat regex yoki pattern asosida ishlaydi. Shu sababli ular juda ko‘p false-positive natijalar qaytaradi. Masalan:
-- test yoki mock fayllardagi sun’iy tokenlar,
-- “example”, “fake”, “placeholder” kabi soxta qiymatlar,
-- avtomatik generatsiya qilingan past entropiyali satrlar,
-- vaqtinchalik konfiguratsiya kodlari.
+## Key Features
+1.  **3-Layer Analysis Pipeline**:
+    *   **Layer 1 (Rules)**: Fast regex and keyword-based filtering.
+    *   **Layer 2 (ML Model)**: A Random Forest classifier trained on entropy and context features.
+    *   **Layer 3 (LLM)**: OpenAI GPT-4o verification for complex, ambiguous cases.
+2.  **Feedback Loop & Retraining**: Users can mark findings as "False Positive" or "True Positive". The system saves this feedback and can retrain its ML model to improve over time.
+3.  **Authentication**: Secure JWT-based authentication with Argon2 password hashing.
+4.  **REST API**: Fully documented FastAPI endpoints.
 
-Bu esa DevSecOps jamoalari uchun juda katta vaqt sarfi va ortiqcha yuk bo‘lishiga olib keladi.  
-Secret Filter Backend ana shu muammoni engillashtiradi va asosiy tekshiruv jarayonlarini aqlli tarzda avtomatlashtiradi.
+## Project Structure
+```
+project-root/
+├── src/
+│   ├── app/
+│   │   ├── api/            # API Endpoints (Auth, Analyze, Results, Feedback)
+│   │   ├── core/           # Security & Config (JWT, Hashing)
+│   │   ├── db/             # Database Session & Base models
+│   │   ├── ml/             # Machine Learning (Predict, Train, Features)
+│   │   ├── models/         # SQLAlchemy Tables & Pydantic Schemas
+│   │   ├── services/       # Business Logic (Parser, Rules, LLM Client)
+│   ├── tests/              # Test Scripts (Benchmarks, Auth Tests)
+├── data/                   # SQLite Database (secretsense.db)
+├── requirements.txt        # Python Dependencies
+└── .env                    # Secrets (API Keys, DB URL)
+```
 
-Quyidagi ko‘p bosqichli pipeline asosida ishlaydi:
+## Installation & Setup
 
-1. SARIF yoki JSON formatdagi skanerlash natijalarini qabul qiladi va yagona formatga normalizatsiya qiladi.  
-2. Deterministik qoidalar asosida eng oddiy false-positive topilmalarni darhol filtrlab tashlaydi (test/ kataloglari, placeholder so‘zlari, past entropiya va h.k.).  
-3. Murakkabroq holatlar uchun ML modeli features orqali baho beradi (masalan: snippet uzunligi, yo‘l signali, entropiya, regex mosligi).  
-4. ML ishonchi past bo‘lsa, LLM (OpenAI API yoki mos model) kontekstni chuqur tahlil qilib yakuniy qaror chiqaradi.  
-5. Kerak bo‘lganda Active Verification moduli orqali API tokenlarining haqiqiyligi mock yoki real provayderlar yordamida tekshiriladi (masalan AWS token validatsiyasi).  
-6. Yakunda har bir finding uchun quyidagi ma’lumotlar shakllantiriladi:  
-   - false-positive ekanligi yoki yo‘qligi,  
-   - avtomatlashtirilgan qaror sababi (ai_verdict),  
-   - ML/LLM ishonchlilik ko‘rsatkichi (confidence),  
-   - asl joylashuvi (original_location),  
-   - umumiy statistika (qancha FP filtrlandi, qancha TP qoldi).
+1.  **Prerequisites**: Python 3.9+
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Environment Variables**:
+    Create a `.env` file in `project-root`:
+    ```ini
+    DATABASE_URL=sqlite:///./data/secretsense.db
+    SECRET_KEY=your_jwt_secret_key
+    OPENAI_API_KEY=sk-proj-...
+    ```
 
-Tizim FastAPI asosida qurilgan bo‘lib:
-- JWT orqali autentifikatsiya
-- Modul asosidagi toza va kengaytiriladigan arxitektura
-- SARIF/JSON normalizatsiyasi  
-- ML + LLM bilan chuqur tekshiruv
-- Workerlar orqali asinxron ishlash imkoniyati
-- Frontend yoki CI/CD pipeline bilan osongina integratsiya qilinishi uchun to‘liq REST API
+## How to Run
+Start the development server:
+```bash
+python -m uvicorn src.app.main:app --reload
+```
+Access Swagger UI at: `http://localhost:8000/docs`
 
-Natijada DevSecOps jamoalari yuzlab natijalarni qo‘lda ko‘rish o‘rniga, faqat haqiqiy xavflarga e’tibor qaratadi.  
-Bu esa skanerlash jarayonini tezlashtiradi, noto‘g‘ri ogohlantirishlar sonini kamaytiradi va ishlab chiqish jarayonlarini sekinlashtirmasdan yuqori xavfsizlikni ta’minlaydi.
+## Core Logic Explained
+
+### The Analysis Funnel (`src/app/services/ml_pipeline.py`)
+1.  **Parsing**: Converts SARIF/JSON input into a standardized `Finding` object.
+2.  **Rule Filter**: Checks filenames (`test_`, `mock_`) and keywords (`example`, `dummy`). If matched -> marked as False Positive.
+3.  **ML Inference**: Extracts features (Entropy, String Length, etc.) and asks `classifier.pkl` for a probability score.
+4.  **LLM Verification**: If the ML model is unsure (confidence between 0.4 and 0.7), it sends the snippet to GPT-4o for a "human-like" verdict.
+
+## API Documentation
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| **POST** | `/api/v1/auth/register` | Register a new user |
+| **POST** | `/api/v1/auth/login` | Login (returns JWT Token) |
+| **POST** | `/api/v1/analyze` | Submit a scan report (SARIF/JSON) |
+| **GET** | `/api/v1/results/{id}` | Get analysis results & AI verdicts |
+| **POST** | `/api/v1/feedback/` | Submit User Feedback (Correct/Incorrect) |
+
+## Testing & Validation
+
+**1. Benchmark Suite**
+Run specific test cases to verify the pipeline:
+```bash
+python src/tests/run_case.py 46
+```
+*   Cases 1-15: Rule-based checks.
+*   Cases 16-30: Pure ML checks.
+*   Cases 31-45: LLM-required checks.
+*   Cases 46-50: Complex multi-finding reports.
+
+**2. Manual Auth Test**
+Test the login/register flow:
+```bash
+python src/tests/test_auth_manual.py
+```
+
+**3. Retraining**
+Incorporate feedback into the model:
+```bash
+python src/app/ml/train.py
+```
+
+---
+*Built for the AI Boostcamp Competition.*

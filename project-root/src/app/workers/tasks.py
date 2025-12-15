@@ -1,14 +1,16 @@
 """
-Background tasklar (Celery / RQ uchun).
+Background tasks (for Celery / RQ).
 
-Vazifasi:
-- Uzun davom etadigan ishlarni (ML predict, LLM chaqiruv, active verification) asinxron bajarish uchun tasklarni ta'riflaydi.
-- Masalan: `process_report(report_id)` yoki `active_verify(finding_id)`.
+Task:
+- Defines tasks to perform long-running tasks (ML predict, LLM call, active verification) asynchronously.
+- For example: `process_report(report_id)` or `active_verify(finding_id)`.
 
-Bog'lanish:
-- endpoints/analyze.py asinxron ishlashni tanlagan hollarda bu tasklar enque qilinadi.
-- worker.py bu tasklarni bajaradi.
+Linkage:
+- These tasks are enqueued when endpoints/analyze.py chooses to run asynchronously.
+- worker.py executes these tasks.
 
-E'tibor:
-- Celery ishlatilsa, Redis yoki boshqa broker va result backend kerak bo‘ladi.
+Note:
+- If using Celery, Redis or another broker and result backend are required.
 """
+
+# not used yet

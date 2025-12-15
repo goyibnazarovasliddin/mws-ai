@@ -1,10 +1,12 @@
 """
-Foydali yordamchi funksiyalar (general utils).
+Useful helper functions (general utils).
 
-Vazifasi:
-- Log formatlash, timestamp, uniq id generatorlar, JSON helperlar va h.k.
-- Loyihaning turli joylarida qayta ishlatiladigan kichik util funksiyalar.
+Function:
+- Log formatting, timestamp, unique id generators, JSON helpers, etc.
+- Small util functions that are reused in different parts of the project.
 
-Bog'lanish:
-- Har qanday modul chaqirishi mumkin.
+Linking:
+- Can be called by any module.
 """
+
+# not used yet

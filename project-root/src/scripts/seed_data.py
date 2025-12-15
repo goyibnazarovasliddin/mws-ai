@@ -1,10 +1,12 @@
 """
-Dastlabki (seed) belgilangan ma'lumotlarni yaratish.
+Create seed data.
 
-Vazifasi:
-- Demo User, sample Reports va labeled examples (FP/TP) ni DB ga qo'yadi.
-- ML train uchun sample labeled dataset hosil qiladi.
+Task:
+- Puts Demo User, sample Reports and labeled examples (FP/TP) into DB.
+- Creates sample labeled dataset for ML train.
 
-E'tibor:
-- Ushbu fayl testlar va demo uchun ishlatiladi; haqiqiy maxfiy ma'lumotlarni kiritmaslik kerak.
+Note:
+- This file is used for testing and demo; do not insert real confidential data.
 """
+
+# not used yet

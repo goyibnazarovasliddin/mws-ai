@@ -1,6 +1,8 @@
 """
-Parser va SARIF normalizer uchun testlar.
+Tests for the parser and SARIF normalizer.
 
-Vazifasi:
-- sample SARIF va JSON hisobotlarni parser.normalize() ga berib chiqariladigan Finding strukturasi to'g'riligi test qilinadi.
+Task:
+- The correctness of the Finding structure, which is output by passing sample SARIF and JSON reports to parser.normalize(), is tested.
 """
+
+# not used yet

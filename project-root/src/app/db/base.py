@@ -1,10 +1,12 @@
 """
-SQLAlchemy declarative base va umumiy DB model bazasi.
+SQLAlchemy declarative base and general DB model base.
 
-Vazifasi:
-- ORM uchun `Base = declarative_base()` obyekti.
-- Alembic migratsiya ishlatiladigan bo‘lsa, shu Base import qilinadi.
+Function:
+- `Base = declarative_base()` object for ORM.
+- This Base is imported when Alembic migration is used.
 
-Bog'lanish:
-- models/db_models.py shu Base bilan ORM modellari yaratadi.
+Link:
+- models/db_models.py creates ORM models with this Base.
 """
+
+# not used yet

@@ -1,8 +1,10 @@
-# docker-compose: lokal infratuzilmani yuklash
+# docker-compose: load local infrastructure
 
-# Vazifasi:
-# - `api` servisini, `db` (postgres yoki redis), `worker` va `redis`ni birga ishga tushirish.
-# - Lokal rivojlanish uchun qulay: `docker-compose up --build`.
+# Task:
+# - Start `api` service, `db` (postgres or redis), `worker` and `redis` together.
+# - Convenient for local development: `docker-compose up --build`.
 
-# E'tibor:
-# - Agar Celery ishlatilsa, redis va worker xizmatlarini compose-ga qo'shamiz.
+# Note:
+# - If using Celery, we add redis and worker services to compose.
+
+# not used yet

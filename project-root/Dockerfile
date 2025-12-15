@@ -1,7 +1,9 @@
-# Dockerfile: API image qurish uchun
+# Dockerfile: For building API image
 
-# Vazifasi:
-# - Python muhitini yaratadi, dependencylarni o'rnatadi va `uvicorn src.app.main:app` ni ishga tushiradi.
+# Task:
+# - Creates Python environment, installs dependencies and starts `uvicorn src.app.main:app`.
 
-# E'tibor:
-# - Build caching va multi-stage build optimizatsiyalari production uchun qo'shilishi mumkin.
+# Note:
+# - Build caching and multi-stage build optimizations can be added for production.
+
+# not used yet

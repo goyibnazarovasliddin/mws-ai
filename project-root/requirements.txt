@@ -1,7 +1,19 @@
-"""
-Dependency manifest
+# Dependency manifest
+# `pip install -r requirements.txt` or `poetry install` to run
 
-Vazifasi:
-- Loyihangizdagi kutubxonalarni aniqlaydi.
-- `pip install -r requirements.txt` yoki `poetry install` orqali bog'lanadi.
-"""
+fastapi
+uvicorn
+pydantic
+pydantic-settings
+sqlalchemy
+python-jose[cryptography]
+passlib[argon2]
+python-multipart
+scikit-learn
+numpy
+python-dotenv
+requests
+httpx
+pytest
+email-validator
+openai

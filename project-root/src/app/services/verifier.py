@@ -1,11 +1,13 @@
 """
-Active verification adapterlari.
+Active verification adapters.
 
-Vazifasi:
-- Provider-specific tekshiruvlarni amalga oshiradi (AWS token validation, Slack token check va h.k).
-- Hackathon uchun bu modulni mock qilamiz yoki read-only safe endpoints bilan cheklaymiz.
+Task:
+- Performs provider-specific validations (AWS token validation, Slack token check, etc.).
+- For hackathons, we mock this module or restrict it to read-only safe endpoints.
 
-Bog'lanish:
-- ml_pipeline yoki alohida background task sifatida chaqiriladi.
-- Har qanday real provider tekshiruvlarida xavfsizlik va maxfiylik qoidalariga rioya qilish kerak.
+Connection:
+- Called as ml_pipeline or as a separate background task.
+- Any real provider validations must comply with security and privacy rules.
 """
+
+# not used yet
