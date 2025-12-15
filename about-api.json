@@ -1,0 +1,216 @@
+1. POST /api/auth/register - Foydalanuvchini ro'yxatdan o'tkazish
+request.json:
+{
+  "username": "string",
+  "email": "string",
+  "password": "string"
+}
+
+response.json:
+{
+  "user": {
+    "id": "string",
+    "username": "string",
+    "email": "string",
+    "created_at": "ISO8601"
+  },
+  "message": "User created"
+}
+
+
+
+2. POST /api/auth/login - Foydalanuvchini tizimga kiritish
+request.json:
+{
+  "username": "string",
+  "password": "string"
+}
+
+response.json:
+{
+  "access_token": "string",
+  "token_type": "bearer",
+  "expires_in": 900,
+  "user": {
+    "id": "string",
+    "username": "string",
+    "email": "string"
+  }
+}
+
+
+
+3. POST /api/auth/refresh - Access tokenni yangilash
+request.json:
+{ }
+
+response.json:
+{
+  "access_token": "string",
+  "expires_in": 900
+}
+
+
+
+4. POST /api/auth/logout - Foydalanuvchini tizimdan chiqarish
+request.json:
+{ }
+
+response.json:
+{
+  "ok": true
+}
+
+
+
+5. POST /api/analyze - SARIF/JSON reportni tahlilga yuborish
+request.json:
+{
+  "tool": "string",
+  "report": { }
+}
+
+request.multipart:
+file: report.json/sarif  
+tool: string
+
+response.json:
+{
+  "report_id": "string",
+  "status": "processing",
+  "message": "Report accepted, processing started"
+}
+
+
+
+6. GET /api/results/{report_id} - Hisobot natijasini olish
+response_processing.json:
+{
+  "report_id": "string",
+  "status": "processing"
+}
+
+response_completed.json:
+{
+  "report_id": "string",
+  "status": "completed",
+  "findings": [
+    {
+      "finding_id": "string",
+      "rule_id": "string",
+      "file_path": "string",
+      "secret_snippet": "string",
+      "is_false_positive": true,
+      "confidence": 0.95,
+      "ai_verdict": "string",
+      "original_location": { }
+    }
+  ],
+  "stats": {
+    "total_findings": 50,
+    "filtered_fp": 35,
+    "remaining_tp": 15
+  }
+}
+
+
+
+7. GET /api/reports - Foydalanuvchining barcha hisobotlari ro'yxati
+response.json:
+{
+  "items": [
+    {
+      "report_id": "string",
+      "status": "string",
+      "created_at": "ISO8601",
+      "stats": {
+        "total_findings": "number"
+      }
+    }
+  ],
+  "total": "number",
+  "limit": "number",
+  "offset": "number"
+}
+
+
+
+8. GET /api/reports/{report_id}/download - Hisobotni yuklab olish
+response:
+file
+
+
+
+9. POST /api/feedback - Finding bo'yicha feedback yuborish
+request.json:
+{
+  "report_id": "string",
+  "finding_id": "string",
+  "correct_label": "false_positive | true_positive"
+}
+
+response.json:
+{
+  "ok": true,
+  "message": "Feedback saved"
+}
+
+
+
+10. GET /api/health - Backend sog'lig'ini tekshirish
+response.json:
+{
+  "status": "ok",
+  "time": "ISO8601"
+}
+
+
+
+11. GET /api/admin/metrics - Admin uchun tizim statistikasi (ixtiyoriy)
+response.json:
+{
+  "reports_total": "number",
+  "avg_fp_rate": "number",
+  "models": [
+    {
+      "name": "string",
+      "created_at": "ISO8601"
+    }
+  ],
+  "pending_jobs": "number"
+}
+
+
+
+12. POST /api/admin/retrain - ML modelni qayta o'qitishni boshlash (ixtiyoriy)
+request.json:
+{
+  "dataset": "string",
+  "params": { }
+}
+
+response.json:
+{
+  "job_id": "string",
+  "status": "scheduled"
+}
+
+
+
+13. POST /api/verifier/verify - Tokenni provider orqali tekshirish (ixtiyoriy)
+request.json:
+{
+  "provider": "string",
+  "snippet": "string",
+  "meta": {
+    "file_path": "string"
+  }
+}
+
+response.json:
+{
+  "provider": "string",
+  "valid": false,
+  "reason": "string",
+  "details": { }
+}

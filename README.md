@@ -59,6 +59,24 @@ Access Swagger UI at: `http://localhost:8000/docs`
 3.  **ML Inference**: Extracts features (Entropy, String Length, etc.) and asks `classifier.pkl` for a probability score.
 4.  **LLM Verification**: If the ML model is unsure (confidence between 0.4 and 0.7), it sends the snippet to GPT-4o for a "human-like" verdict.
 
+## Data Lifecycle & Learning
+
+### 1. where Feedback Goes
+When a user submits feedback via `/api/v1/feedback/` (or via the interactive test script), the system stores:
+*   The **Finding ID** (what snippet was found).
+*   The **User's Verdict** (whether they confirmed it as True Positive or False Positive).
+*   **Storage**: This data is saved in the **`feedbacks`** table in the SQLite database (`data/secretsense.db`).
+
+### 2. How the ML Model Trains
+The training script (`src/app/ml/train.py`) uses a **Hybrid Dataset**:
+1.  **Synthetic Data**: It generates 1,000+ synthetic examples of fake secrets (stubs, placeholders) and real secrets (high entropy strings) to ensure a baseline understanding.
+2.  **Real User Feedback**: It connects to the database, pulls all labeled feedback, extracts features (Entropy, Length, Keywords) from the referenced findings, and mixes them into the training set.
+
+### 3. Future of the Model
+*   **Continuous Improvement**: As more users verify findings, the "Feedback" dataset grows.
+*   **Adaptive Security**: The model eventually learns organization-specific patterns (e.g., custom token formats or internal variable naming conventions) that generic rules might miss.
+*   **Automated Re-training**: In a production environment, `train.py` can be triggered automatically (e.g., nightly via Celery) to produce a fresh `classifier.pkl`.
+
 ## API Documentation
 
 | Method | Endpoint | Description |
