@@ -77,6 +77,18 @@ The training script (`src/app/ml/train.py`) uses a **Hybrid Dataset**:
 *   **Adaptive Security**: The model eventually learns organization-specific patterns (e.g., custom token formats or internal variable naming conventions) that generic rules might miss.
 *   **Automated Re-training**: In a production environment, `train.py` can be triggered automatically (e.g., nightly via Celery) to produce a fresh `classifier.pkl`.
 
+## Data Storage & Schema
+
+The application uses **SQLAlchemy** (SQL) for persistent storage. By default, it uses SQLite (`data/secretsense.db`), but is production-ready for PostgreSQL.
+
+1.  **Users (`users`)**: Authenticated user accounts (`username`, `email`, `hashed_password`).
+2.  **Reports (`reports`)**: Metadata for each scan (`status`, `stats` summary, `tool_name`).
+3.  **Findings (`findings`)**: The core analysis results.
+    *   **Source**: `file_path`, `line_number`, `secret_snippet`.
+    *   **Analysis**: `is_false_positive` flag, `confidence` score (0.0-1.0), and `ai_verdict` (LLM explanation).
+    *   **Raw**: Stores the original JSON from the scanner in `raw_data`.
+4.  **Feedback (`feedbacks`)**: User corrections (`is_correct`, `comment`) used to fine-tune the ML model.
+
 ## API Documentation
 
 | Method | Endpoint | Description |

@@ -3,5 +3,20 @@
     "username": "qwerty",
     "password": "qwerty12345",
     "email": "qwerty@example.com"
+  },
+  {
+    "username": "test1",
+    "password": "test1test1",
+    "email": "test1@example.com"
+  },
+  {
+    "username": "qwerty12345",
+    "password": "qwerty12345",
+    "email": "qwerty12345@example.com"
+  },
+  {
+    "username": "admin1",
+    "password": "admin123456",
+    "email": "admin1@example.com"
   }
 ]
