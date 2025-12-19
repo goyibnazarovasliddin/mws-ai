@@ -13,6 +13,11 @@ Linkage:
 
 import numpy as np
 import os
+import sys
+
+# Add src to path so 'app' module can be imported
+sys.path.append(os.path.join(os.getcwd(), 'src'))
+
 import joblib
 from sqlalchemy.orm import Session
 from sklearn.ensemble import RandomForestClassifier
@@ -39,26 +44,25 @@ def generate_synthetic_data(n_samples=1000):
     y = []
 
     for _ in range(n_samples // 2):
-        # 1. Simulate False Positives (e.g. placeholders, test files)
-        # Low entropy, short length, test paths
-        entropy = np.random.uniform(1.0, 3.5)
-        length = np.random.randint(5, 20)
+        # 1. Simulate False Positives (Overlap more with TP)
+        entropy = np.random.uniform(1.0, 4.2)  # Increased upper bound
+        length = np.random.randint(5, 35)      # Increased upper bound
         is_test = 1 if np.random.random() > 0.3 else 0
         has_kw = 1 if np.random.random() > 0.3 else 0
+        has_todo = 1 if np.random.random() > 0.5 else 0
         
-        # If it has strong FP signals, it's definitely FP
-        X.append([entropy, length, is_test, has_kw])
+        X.append([entropy, length, is_test, has_kw, has_todo])
         y.append(1)
 
     for _ in range(n_samples // 2):
-        # 2. Simulate True Positives (e.g. real AWS keys, API tokens)
-        # High entropy, long length, production paths
-        entropy = np.random.uniform(3.8, 6.0)
-        length = np.random.randint(20, 60)
-        is_test = 0 # Mostly usage in prod code
-        has_kw = 0 # Real keys rarely have 'example' in them
+        # 2. Simulate True Positives (Overlap more with FP)
+        entropy = np.random.uniform(3.0, 6.0)  # Decreased lower bound
+        length = np.random.randint(15, 60)     # Decreased lower bound
+        is_test = 0
+        has_kw = 0
+        has_todo = 0 
         
-        X.append([entropy, length, is_test, has_kw])
+        X.append([entropy, length, is_test, has_kw, has_todo])
         y.append(0)
 
     return np.array(X), np.array(y)
@@ -81,8 +85,9 @@ def fetch_feedback_data(db: Session):
             rule_id=finding.rule_id,
             file_path=finding.file_path,
             secret_snippet=finding.secret_snippet,
-            start_line=finding.start_line,
-            end_line=finding.end_line
+            is_false_positive=finding.is_false_positive or False,
+            confidence=finding.confidence or 0.0,
+            ai_verdict=finding.ai_verdict or ""
         )
         
         # Extract features
@@ -113,45 +118,70 @@ def fetch_feedback_data(db: Session):
         
     return np.array(X_feedback), np.array(y_feedback)
 
+import datetime
+
 def train_model():
-    print("Generating synthetic training data...")
+    """
+    Main training workflow:
+    1. Generates synthetic data for a strong baseline.
+    2. Fetches user feedback from DB to adapt to real-world edge cases.
+    3. Trains a RandomForestClassifier.
+    4. Evaluates and saves the model with a unique timestamped name.
+    """
+    print("Step 1: Generating synthetic training data...")
     X_syn, y_syn = generate_synthetic_data()
     
-    # Mix with Feedback Data
+    # Mix with Feedback Data from the users
     db = SessionLocal()
     try:
+        print("Step 2: Checking database for user feedback...")
         X_feed, y_feed = fetch_feedback_data(db)
         if len(X_feed) > 0:
-            print(f"Mixing in {len(X_feed)} feedback examples.")
+            print(f"Found {len(X_feed)} feedback records. Mixing them into the training set.")
             X = np.concatenate((X_syn, X_feed), axis=0)
             y = np.concatenate((y_syn, y_feed), axis=0)
         else:
+            print("No feedback data found in DB. Training on synthetic baseline only.")
             X, y = X_syn, y_syn
     except Exception as e:
-        print(f"Error fetching feedback: {e}")
+        print(f"Warning: Error fetching feedback: {e}. Falling back to synthetic only.")
         X, y = X_syn, y_syn
     finally:
         db.close()
     
-    print(f"Total Dataset shape: {X.shape}")
+    print(f"Total training samples: {X.shape[0]}")
     
+    # Split for local validation
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
-    # Simple Random Forest
+    # Initialize and fit the classifier
+    # We use a Random Forest as it handles non-linear relationships in entropy/length well.
     clf = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=42)
     clf.fit(X_train, y_train)
     
-    print("Training complete.")
-    print("Evaluation on Test Set:")
-    y_pred = clf.predict(X_test)
-    print(classification_report(y_test, y_pred))
+    print("Step 3: Training complete.")
     
-    # Save
+    # Evaluate locally before saving
+    y_pred = clf.predict(X_test)
+    report = classification_report(y_test, y_pred)
+    print("\nLocal classification report on test partition:")
+    print(report)
+    
+    # Step 4: Save the model
     if not os.path.exists(MODEL_DIR):
         os.makedirs(MODEL_DIR)
     
+    # 1. Save as the 'active' model for immediate app use
     joblib.dump(clf, MODEL_PATH)
-    print(f"Model saved to {MODEL_PATH}")
+    print(f"Active model updated at: {MODEL_PATH}")
+    
+    # 2. Save with a unique timestamped name for version tracking
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    versioned_name = f"classifier_v_{timestamp}.pkl"
+    versioned_path = os.path.join(MODEL_DIR, versioned_name)
+    joblib.dump(clf, versioned_path)
+    print(f"New versioned model saved as: {versioned_path}")
 
 if __name__ == "__main__":
     train_model()
+
